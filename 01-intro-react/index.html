@@ -15,5 +15,14 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>ReactApp</title>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const divRoot = document.querySelector("#root");
+      const clientName = "Stranger";
+      const h1Tag = <h1>Hi {clientName}! </h1>;
+      ReactDOM.render(h1Tag, divRoot);
+    </script>
+  </body>
 </html>
