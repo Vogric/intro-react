@@ -1,6 +1,8 @@
 * {
   font-family: Helvetica, arial, sans-serif;
-  background-color: rgb(39, 39, 39);
+  background-image: url("../src/assets/10.gif");
+  color: #fafafa;
+  text-align: center;
 }
 
 body {
@@ -8,17 +10,10 @@ body {
 }
 
 input {
-  background-color: #fafafa;
-  color: #000000;
+  color: #ffffff;
   font-size: 1.2rem;
   width: 100%;
-}
-
-h2,
-p,
-.category {
-  color: #fafafa;
-  text-align: center;
+  border: 1px solid #fafafa;
 }
 
 h2 {
@@ -40,12 +35,6 @@ span {
   margin-bottom: 10px;
   margin-right: 10px;
   overflow: hidden;
-}
-
-.card p {
-  color: #fafafa;
-  padding: 5px;
-  text-align: center;
 }
 
 card img {
