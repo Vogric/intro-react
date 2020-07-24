@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { GifGridItem } from "./GifGridItem";
 
 export const GifGrid = ({ category }) => {
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    getGifs();
+  }, []);
   const getGifs = async () => {
     const url =
-      "https://api.giphy.com/v1/gifs/random?api_key=gghj2O6zlKZcCpVcN7YGa6zCQSCzz1Bv&tag=&rating=g";
+      "https://api.giphy.com/v1/gifs/search?q=coronavirus&limit=10&api_key=gghj2O6zlKZcCpVcN7YGa6zCQSCzz1Bv";
     const resp = await fetch(url);
     const { data } = await resp.json();
-    console.log(data);
     const gifs = data.map((img) => {
       return {
         id: img.id,
@@ -15,12 +19,17 @@ export const GifGrid = ({ category }) => {
       };
     });
     console.log(gifs);
+    setImages(gifs);
   };
 
   getGifs();
   return (
     <>
       <h3> {category} </h3>
+
+      {images.map((img) => (
+        <GifGridItem key={img.id} {...img} />
+      ))}
     </>
   );
 };
